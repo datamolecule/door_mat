@@ -1,0 +1,30 @@
+<h1>Sign In</h1>
+
+<%= form_for(@sign_in, url: sign_in_path) do |f| %>
+    <%= render 'door_mat/helpers/errors_if_any', {object: @sign_in} %>
+
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br>
+      <%= f.password_field :password %>
+    </div>
+    <div class="field">
+      <%= f.label :is_this_a_public_computer? %>
+      <%= f.check_box :is_public %>
+    </div>
+    <div class="field">
+      <%= f.label :remember_me? %>
+      <%= f.check_box :remember_me %>
+    </div>
+    <p><%= link_to t("door_mat.forgot_password.link"), forgot_password_path %></p>
+
+    <div class="actions">
+      <%= f.submit t("door_mat.sign_in.submit_button") %>
+    </div>
+<% end %>
+
+
+<p>Don't have an account yet? <%= link_to 'Sign Up', sign_up_path %></p>

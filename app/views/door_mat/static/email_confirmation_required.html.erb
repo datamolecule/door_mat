@@ -1,0 +1,17 @@
+<h1>Please confirm your email address</h1>
+
+<p>To access the page you requested your email address must first be confirmed</p>
+
+<p>
+  To confirm your email address, please follow the link in the confirmation email
+  sent to <%= DoorMat::Session.current_session.email.address %>.
+</p>
+
+<p>
+  You can also request that a new confirmation email be sent.
+
+  <%= form_tag(door_mat.resend_email_confirmation_path) do %>
+      <%= hidden_field_tag( 'email', DoorMat::Session.current_session.email.to_urlsafe_encoded) %>
+      <%= submit_tag("Resend confirmation email") %>
+  <% end %>
+</p>

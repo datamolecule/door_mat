@@ -1,0 +1,22 @@
+<h1>Change Password</h1>
+
+<%= form_for(@change_password, url: change_password_path) do |f| %>
+    <%= render 'door_mat/helpers/errors_if_any', {object: @change_password} %>
+
+    <div class="field">
+      <%= f.label :old_password %><br>
+      <%= f.password_field :old_password %>
+    </div>
+    <div class="field">
+      <%= f.label :new_password %><br>
+      <%= f.password_field :new_password %>
+    </div>
+    <div class="field">
+      <%= f.label :new_password_confirmation %><br>
+      <%= f.password_field :new_password_confirmation %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("door_mat.change_password.submit_button") %>
+    </div>
+<% end %>

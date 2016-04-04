@@ -1,0 +1,16 @@
+Follow the access link in the email just sent to you or paste in the access code below.
+
+<%= form_for(@access_token, url: access_token_path) do |f| %>
+    <%= render 'door_mat/helpers/errors_if_any', {object: @access_token} %>
+
+    <%= f.hidden_field :token_for, :value => @access_token.token_for %>
+
+    <div class="field">
+      <%= f.label :code %><br>
+      <%= f.text_field :identifier %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("door_mat.password_less_session.submit_token") %>
+    </div>
+<% end %>

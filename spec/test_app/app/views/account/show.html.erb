@@ -1,0 +1,133 @@
+<h1>Account#show</h1>
+<p>Find me in app/views/account/show.html.erb</p>
+<%= link_to 'Sign Out', door_mat.sign_out_path %><br>
+<%= link_to 'Back to - Session protected page', main_app.session_protected_page_path %>
+
+<h2>You are currently logged in as:</h2>
+<%= DoorMat::Session.current_session.email.address %>
+
+<h2>User Name</h2>
+<%= form_for(@actor.user_detail, url: account_update_path) do |f| %>
+    <%= f.text_field :name %>
+    <%= f.submit 'Update' %>
+<% end %>
+<p>The UserDetail model demonstrate the automatic encryption of a text field using DoorMat::AttrSymmetricStore</p>
+
+
+<h2>Recovery Key</h2>
+
+<% download_recovery_key_activities = @actor.download_recovery_key_activities %>
+<% if download_recovery_key_activities.blank? %>
+    <p>You have already downloaded your recovery key; to obtain a new one, change your password.</p>
+<% else %>
+    <% if DoorMat::Session.current_session.private_computer?%>
+        <table>
+          <% @actor.download_recovery_key_activities.each do |key| %>
+              <tr>
+                <td>
+                  Click below to download your recovery key.
+
+                  <%= form_tag(door_mat.download_recovery_key_path) do %>
+                      <%= hidden_field_tag( 'token', key.get_new_token) %>
+                      <%= hidden_field_tag( 'disposition', 'attachment') %>
+                      <%= submit_tag("Download") %>
+                  <% end %>
+
+                </td>
+              </tr>
+          <% end %>
+        </table>
+    <% else %>
+        <p>Please sign in from a private computer in order to safely download your recovery key.</p>
+    <% end %>
+<% end %>
+
+<h2>Registered Email Address</h2>
+<table>
+  <% @actor.emails.each do |email| %>
+      <tr>
+        <td>
+          <%= email.address %>
+        </td>
+        <td>
+          <% if email.confirmed? || email.primary? %>
+          Confirmed
+          <% else %>
+              <%= form_tag(door_mat.resend_email_confirmation_path) do %>
+                  <%= hidden_field_tag( 'email', email.to_urlsafe_encoded) %>
+                  <%= submit_tag("Resend confirmation email") %>
+              <% end %>
+          <% end %>
+        </td>
+
+        <% if email.primary? %>
+            <td>
+              Primary
+            </td>
+            <td>
+              Can't delete primary
+            </td>
+        <% else %>
+            <td>
+              <%= form_tag(door_mat.set_primary_email_path) do %>
+                  <%= hidden_field_tag( 'email', email.to_urlsafe_encoded) %>
+                  <%= submit_tag("Make primary") %>
+              <% end %>
+            </td>
+            <td>
+              <%= form_tag(door_mat.delete_email_path) do %>
+                  <%= hidden_field_tag( 'email', email.to_urlsafe_encoded) %>
+                  <%= submit_tag("Delete") %>
+              <% end %>
+            </td>
+        <% end %>
+      </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add new email', door_mat.add_email_path %>
+
+
+<h2>Change Password</h2>
+<%= link_to 'Change Password', door_mat.change_password_path %>
+
+<h2>Active sessions</h2>
+<table>
+  <% @actor.sessions.each do |session| %>
+      <% is_current_session = DoorMat::Session.current_session.hashed_token == session.hashed_token %>
+      <tr>
+        <td>
+          <% if is_current_session %>
+            *
+          <% end %>
+
+          <%= session.email.address %>
+        </td>
+        <td>
+          <%= session.hashed_token %>
+        </td>
+        <td>
+          <%= session.ip %>
+        </td>
+        <td>
+          <%= session.created_at %>
+        </td>
+        <td>
+          <%= session.updated_at %>
+        </td>
+          <td>
+          <%= session.password_authenticated_at %>
+          </td>
+        <td>
+          <% unless is_current_session %>
+              <%= button_to "Terminate", door_mat.terminate_session_path(session.hashed_token), method: :post%>
+          <% end %>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="4">
+          <%= session.agent %>
+        </td>
+      </tr>
+  <% end %>
+</table>

@@ -1,0 +1,73 @@
+
+en:
+  door_mat:
+    activity_mailer:
+      confirm_email:
+        subject: "Confirm your email"
+      reset_password:
+        subject: "Reset your password?"
+    actor:
+      could_not_create: "Could not sign you up based on the information provided."
+      max_email_count_per_actor_reached: "The maximum number of email per account was reached."
+      email_already_associated: "This email is already associated with your account."
+    manage_email:
+      email_added: 'New email address successfully added. Please check your inbox for the confirmation email.'
+      could_not_delete: 'The specified email can not be deleted.'
+      could_not_delete_only_email: 'Can not delete the only email address associated with this account.'
+      could_not_delete_current_email: 'Can not delete the email address you are currently logged in with.'
+      can_not_delete_primary: 'Primary email can not be deleted; specify a different primary email first.'
+      email_deleted: 'Email deleted.'
+      primary_email_updated: 'Primary email was set.'
+      could_not_update_primary_email: 'Primary email could not be set.'
+      add_button: 'Add email'
+    session:
+      initialization_failure: "Session initialization failed"
+      could_not_create: "Could not sign you in based on the information provided."
+      submit_button: "Sign In"
+    password_less_session:
+      create_failed: "Could not create a request token based on the information provided."
+      blank_identifier: "The identifier can not be blank."
+      identifier_error: "The identifier provided does not match the confirmation field. Please check the inputs."
+      expect_email_identifier: "The identifier is expected to be a valid email address."
+      submit_button: "Request access token"
+      submit_token: "Submit access token"
+      actor_missing: 'Access token could not be created.'
+    password_less_session_mailer:
+      send_token:
+        subject: "Your access link"
+    forgot_password:
+      make_new_request: 'Please make a new request.'
+      link: "Forgot your password?"
+      submit_button: "Reset"
+    sign_up:
+      submit_button: "Sign Up"
+      failed: "Could not sign you up based on the information provided"
+    sign_in:
+      submit_button: "Sign In"
+      failed: "Could not sign you in based on the information provided"
+    change_password:
+      submit_button: "Change Password"
+      failed: "Failed to changed password"
+      success: "Password was successfully changed"
+    security_questions:
+      q1: "What was the name of your first stuffed animal?"
+      q2: "What was your childhood nickname?"
+      q3: "What is the name of your favorite childhood friend?"
+      q4: "What was your childhood phone number including area code? (e.g., 000-000-0000)"
+      q5: "What street did you live on in third grade?"
+      q6: "What was the last name of your third grade teacher?"
+      q7: "What school did you attend for sixth grade?"
+      q8: "What is your oldest sibling’s birthday month and year? (e.g., January 1900)"
+      q9: "What is your oldest sibling's middle name?"
+      q10: "Where were you when you had your first kiss?"
+      q11: "What is the first name of the boy or girl that you first kissed?"
+      q12: "What is your oldest cousin's first and last name?"
+      q13: "In what city or town did your mother and father meet?"
+      q14: "In what city does your nearest sibling live?"
+      q15: "What is your maternal grandmother's maiden name?"
+      q16: "In what city or town was your first job?"
+      q17: "What is the name of the place your wedding reception was held?"
+      q18: "What is the name of a college you applied to but didn't attend?"
+      q19: "In what city did you meet your spouse/significant other?"
+      q20: "What is the middle name of your oldest child?"
+      q21: "Where were you when you first heard about 9/11?"

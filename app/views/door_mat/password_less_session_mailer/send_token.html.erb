@@ -1,0 +1,11 @@
+<p>Please find your access link below</p>
+
+<p>This email body is a DoorMat placeholder, override it with app/views/door_mat/password_less_session_mailer/send_token.html.erb in your application.</p>
+
+<ul>
+  <% @parameters.keys.each do |key| %>
+      <li>
+        <%= key %> -> <%= @parameters[key] %>
+      </li>
+  <% end %>
+</ul>

@@ -1,0 +1,10 @@
+
+<p>The host now opens a losing door:</p>
+<p>Door <%= @game.loosing_door_shown %> is a losing door!</p>
+
+<p>You can change your selection</p>
+<p>Please submit your final decision:</p>
+<%= form_tag(final_choice_path) do %>
+    <%= select_tag "door", options_for_select(Array(1 .. @game.number_of_doors.to_i).map {|n| [n.to_s, n]}, @game.player_selected_door) %>
+    <%= submit_tag "Next" %>
+<% end %>

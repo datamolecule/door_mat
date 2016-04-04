@@ -1,0 +1,14 @@
+<h1>Add email</h1>
+
+<%= form_for(@email, url: add_email_path) do |f| %>
+    <%= render 'door_mat/helpers/errors_if_any', {object: @email} %>
+
+    <div class="field">
+      <%= f.label :address %><br>
+      <%= f.text_field :address %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("door_mat.manage_email.add_button") %>
+    </div>
+<% end %>

@@ -1,0 +1,32 @@
+<h1>Static#session_protected_page</h1>
+<p>Find me in spec/test_app/app/views/static/session_protected_page.html.erb</p>
+
+<h1>Protected page</h1>
+
+<p>You need to be signed in to access this page.</p>
+
+<%= link_to 'Sign Out', door_mat.sign_out_path %>
+
+<p>
+  The
+<%= link_to 'Show Account', main_app.account_show_path %>
+  page represent a section of the site containing sensitive information that
+  is further protected with require_password_reconfirm(15)
+  and will require a recent password re-confirmation, within the last 15 minutes,
+  to access.
+</p>
+
+<p>The
+  <%= link_to 'Password Reconfirm Required Page', main_app.page_that_require_password_reconfirmation_path %>
+  also require reconfirmation of the password based on the password_reconfirm_delay configuration parameter.
+</p>
+
+<p>
+  A session obtained through the "Remember Me" feature will not grant access to either the Show Account or
+  the Password Reconfirm Required Page page without password re-confirmation.
+</p>
+
+<p>
+  Some area of the site will also require you to use a confirmed email.
+  <%= link_to 'This page is an example of this.', main_app.only_confirmed_email_allowed_path %>
+</p>

@@ -1,0 +1,10 @@
+<h1>Static#only_confirmed_email_allowed</h1>
+<p>Find me in spec/test_app/app/views/static/only_confirmed_email_allowed.html.erb</p>
+
+<h1>Protected page that require the user email to be confirmed in order to have access</h1>
+
+<p>You need to be signed in with a confirmed email to access this page.</p>
+
+
+<%= link_to 'Sign Out', door_mat.sign_out_path %> or
+go back to the <%= link_to 'Session Protected Page', main_app.session_protected_page_path %>

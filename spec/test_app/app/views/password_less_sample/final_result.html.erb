@@ -1,0 +1,7 @@
+<% if @game.player_win? %>
+    <p>You win!</p>
+<% else %>
+    <p>You lose!</p>
+<% end %>
+
+<p>Door <%= @game.winning_door %> was the winning door!</p>

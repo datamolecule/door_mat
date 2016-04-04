@@ -1,0 +1,5 @@
+<p>Choose a door</p>
+<%= form_tag(choose_door_path) do %>
+    <%= select_tag "door", options_for_select(Array(1 .. @game.number_of_doors.to_i).map {|n| [n.to_s, n]}) %>
+    <%= submit_tag "Next" %>
+<% end %>

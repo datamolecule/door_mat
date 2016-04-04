@@ -1,0 +1,12 @@
+
+<p>This is a sample application using the DoorMat engine to manage and secure user accounts</p>
+
+<h2>Password protected site</h2>
+<%= link_to 'Sign In', door_mat.sign_in_path %>
+<p>
+  Don't have an account yet? <%= link_to 'Sign Up', door_mat.sign_up_path %>
+</p>
+
+
+<h2>Password less, access token protected site</h2>
+<%= link_to 'Would you like to play a game?', main_app.draw_results_path %>

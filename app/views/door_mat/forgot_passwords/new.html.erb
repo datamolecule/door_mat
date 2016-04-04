@@ -1,0 +1,14 @@
+<h1>Forgot Password</h1>
+
+<%= form_for(@forgot_password, url: forgot_password_path) do |f| %>
+    <%= render 'door_mat/helpers/errors_if_any', {object: @forgot_password} %>
+
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit t("door_mat.forgot_password.submit_button") %>
+    </div>
+<% end %>
