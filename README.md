@@ -71,7 +71,7 @@ See `spec/test_app` for a sample application illustrating the various DoorMat fe
 You will also need to have [MailCatcher](https://mailcatcher.me/) running so you can confirm the email address you register with and to receive password less access tokens.
 Point one browser tab to `http://localhost:1080` to access your local email and a second one to `http://localhost:3001` to interact with the test application.
 
-Further sample usage will be released shortly!
+See [&mu;PM](https://github.com/datamolecule/mupm) for a sample integration of DoorMat.
 
 
 ### Gem Version History

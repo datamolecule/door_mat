@@ -24,7 +24,6 @@ module DoorMat
     :set_primary_email_redirect_url,
     :resend_email_confirmation_redirect_url,
     :confirm_email_success_url,
-    :reconfirm_password_success_url,
     :change_password_success_url,
     :sign_out_success_url,
     :forgot_password_verification_mail_sent_url,
@@ -140,7 +139,6 @@ module DoorMat
       @set_primary_email_redirect_url = [ :request, :referer ]
       @resend_email_confirmation_redirect_url = [ :request, :referer ]
       @confirm_email_success_url = [ :confirm_email_success_url ]
-      @reconfirm_password_success_url = [ :reconfirm_password_success_url ]
       @change_password_success_url = [ :change_password_success_url ]
       @sign_out_success_url = [ :sign_out_success_url ]
       @forgot_password_verification_mail_sent_url = [ :forgot_password_verification_mail_sent_url ]
