@@ -2,6 +2,9 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../test_app/config/environment", __FILE__)
 
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 require 'email_spec'
 require 'rspec/rails'
 require 'database_cleaner'
