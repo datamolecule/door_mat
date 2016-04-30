@@ -2,6 +2,7 @@
 
 Keeping keys safe since front doors have locks...
 
+[![Gem Version](https://badge.fury.io/rb/door_mat.svg)](https://badge.fury.io/rb/door_mat) [![Code Climate](https://codeclimate.com/github/datamolecule/door_mat/badges/gpa.svg)](https://codeclimate.com/github/datamolecule/door_mat) <a href="https://codeclimate.com/github/datamolecule/door_mat/coverage"><img src="https://codeclimate.com/github/datamolecule/door_mat/badges/coverage.svg" /></a>
 
 ### What is the DoorMat library?
 
