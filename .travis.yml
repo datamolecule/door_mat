@@ -20,8 +20,3 @@ rvm:
 
 before_script:
   - RAILS_ENV=test bundle exec rake db:create db:migrate
-
-addons:
-  code_climate:
-    repo_token:
-      secure: "St6QfzlD+MY+vmCmWyg2m3M8V+Rgi6/EPDI0utyAzqtZnj2k2hLUp3w9y23/IPIISohAYVKkQxEmxeRUV4F1trwl9QOigT++9+ClwSzQFUG8RprxxwBG0A6RvE0bPiRcYbIgd8sFI6UzY9BVddjWVTvrTh64poFgbD7aySwsa06yplcyMrg23qlslBJrzUi8TsPteTOOAmGBUisEmeIrWdNE65FWs3Wwk8uihzMeiYxb9sYjbBAADYgVqc1SegwL3J2wLZ8qRZL8S1HTwnQfx+AZfiAguh+VoseqWpSyCmEzOisgzlLy2NCbitUDhjU1oylcOYrjThlQpSwW3sNVt2ecO3/XEp9rV+leNNY4b1okJL8sl4k/d2jP+WGA7tWeCkV8roZTJAqkARx+qShC7UC6pHVqInQ5iK1ekrviS9M32a5SBR07V3eP0z1/uoDtvuF+0vwwzBYqj7QS1NPfhZfJkMsYJv4edEZ7G/0SOlRyscgVEUzJAB2z1k0uriK35TMjMXF8ucgxYQzDLramBqoJMzadbk/dOc+5/0UaBt0Wg4raSDS4gr6TbavcN/Z5qDXlMeFd9o9ENsKfE79Z0Z1AODjcNV5HkQE2U1cckTCOKZWo7Y9TAevuDe9e1MhLYMdY5/utGiQvxsGErPP5X00TO8tsZMmb697lJnVjY+M="

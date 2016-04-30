@@ -12,6 +12,13 @@ if ENV['COVERAGE']
   end
 end
 
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require "codeclimate-test-reporter"
+  CodeClimate::TestReporter.start do
+    add_filter '/spec/'
+  end
+end
+
 # Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
